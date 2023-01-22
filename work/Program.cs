@@ -90,110 +90,253 @@
 // checkTriangle(array);
 
 
-// зад 2
-Console.Write("Введите число: ");  // первый вариант
-int number = Convert.ToInt32(Console.ReadLine());
+// // зад 2
+// Console.Write("Введите число: ");  // первый вариант
+// int number = Convert.ToInt32(Console.ReadLine());
 
-string accumulator = "";
+// string accumulator = "";
 
-while (number > 0)
-{
-    accumulator += number % 2;
-    number /= 2;
-}
+// while (number > 0)
+// {
+//     accumulator += number % 2;
+//     number /= 2;
+// }
 
 
-Console.Write(accumulator);
+// Console.Write(accumulator);
 
-// второй вариант
+// // второй вариант
 
-void ShowArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
+// void ShowArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+// int[] Revers(int[] array)
+// {
+
+//     int temp = 0;
+
+//     for (int i = 0; i < array.Length / 2; i++)
+//     {
+//         temp = array[i];
+//         array[i] = array[(array.Length - 1) - i];
+//         array[(array.Length - 1) - i] = temp;
+//     }
+
+//     return array;
+// }
+
+// int[] intToBin(int num)
+// {
+
+//     int temp = num;
+//     int count = 0;
+
+//     while (Convert.ToBoolean(temp))
+//     {
+//         temp /= 2;
+//         count++;
+//     }
+
+
+//     int[] array = new int[count];
+
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = num % 2;
+//         num /= 2;
+//     }
+
+//     Revers(array);
+
+//     return array;
+// }
+
+// int num = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine(num);
+// int[] array = intToBin(num);
+
+// ShowArray(array);
+
+// // зад 3
+
+
+// Console.WriteLine($"Введите количество чисел Фибоначчи");
+// int val_1 = Convert.ToInt32(Console.ReadLine());
+
+// int param_1 = 0;
+// int param_2 = 1;
+// int temp = param_2;
+
+// temp = param_1 + param_2; //1
+// Console.WriteLine(param_1); //0
+// Console.WriteLine(param_2); // 1
+
+// for (int i = 0; i < val_1; i++)
+// {
+//     temp = temp + param_2; // 2
+//     param_1 = param_2;
+//     param_2 = temp - param_1;
+
+//     Console.WriteLine(temp);
+
+// }
+
+
+// // задание 4
+
+// int[] CopyArray(int[] inArray)
+// {
+//     int[] result = new int[inArray.Length];
+//     for (int i = 0; i < inArray.Length; i++)
+//     { result[i] = inArray[i]; }
+//     return result;
+// }
+
+// // Семинар 7 задание 1 лекция 6 задние рещено в ней, нужно дописать функции
+
+
+// // int [,] matrix = new int[3,4];
+// // PrintArray 
+
+
+// ЗАДАНИЯ ГРУППЫ
+
+// Матрица случайных чисел
+// Console.Clear();
+
+// int [,] matrix = new int[4,4];
+// FillArray(matrix);
+// Console.WriteLine("Задача 48.");
+// PrintArray(matrix);
+// Console.WriteLine();
+// Console.WriteLine("Задача 49.");
+// FillArraySqr(matrix);
+// PrintArray(matrix);
+// Console.WriteLine();
+// Console.WriteLine("Задача 51.");
+// FillArrayDiag(matrix);
+
+// void PrintArray(int[,] matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             Console.Write($"{matr[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// void FillArray(int[,] matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i,j] = i + j;
+//         }
+//     }
+// }
+
+// void FillArraySqr(int[,] matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             if (i % 2 == 0 && j % 2 == 0) matr[i,j] = matr[i,j] * matr[i,j];
+//         }
+//     }
+// }
+
+// void FillArrayDiag(int[,] matr)
+// {
+//     int count = 0;
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             if (i == j) count += matr[i,j];
+//         }
+//     }
+
+//     Console.WriteLine($"Сумма чисел диагонали: {count}");
+// }
+
+
+// семинар 7, задание 48
+
+
+// Задайте двумерный массив размера m на n, каждый элемент в массиве находится по формуле: Aₘₙ = m+n. Выведите полученный массив на экран.
+// m = 3, n = 4.
+// 0 1 2 3
+// 1 2 3 4
+// 2 3 4 5
+
+
+
+
+int [,] matr = new int [3,4];
+ for (int i = 0; i < matr.GetLength(0); i++)
     {
-        Console.Write(array[i] + " ");
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            matr[i,j] = i + j;
+        }
     }
-    Console.WriteLine();
-}
+Console.WriteLine(matr);
 
-int[] Revers(int[] array)
-{
+// // Матрица случайных чисел дз задание 52
 
-    int temp = 0;
+// Console.Clear();
 
-    for (int i = 0; i < array.Length / 2; i++)
-    {
-        temp = array[i];
-        array[i] = array[(array.Length - 1) - i];
-        array[(array.Length - 1) - i] = temp;
-    }
-
-    return array;
-}
-
-int[] intToBin(int num)
-{
-
-    int temp = num;
-    int count = 0;
-
-    while (Convert.ToBoolean(temp))
-    {
-        temp /= 2;
-        count++;
-    }
+// int [,] matrix = new int[4,4];
+// FillArray(matrix);
+// PrintArray(matrix);
+// Console.WriteLine();
+// FillArrayMidl(matrix);
 
 
-    int[] array = new int[count];
+// void PrintArray(int[,] matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             Console.Write($"{matr[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
 
-    for (int i = 0; i < array.Length; i++)
-    {
-        array[i] = num % 2;
-        num /= 2;
-    }
+// void FillArray(int[,] matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i,j] = i + j;
+//         }
+//     }
+// }
 
-    Revers(array);
-
-    return array;
-}
-
-int num = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(num);
-int[] array = intToBin(num);
-
-ShowArray(array);
-
-// зад 3
-
-
-Console.WriteLine($"Введите количество чисел Фибоначчи");
-int val_1 = Convert.ToInt32(Console.ReadLine());
-
-int param_1 = 0;
-int param_2 = 1;
-int temp = param_2;
-
-temp = param_1 + param_2; //1
-Console.WriteLine(param_1); //0
-Console.WriteLine(param_2); // 1
-
-for (int i = 0; i < val_1; i++)
-{
-    temp = temp + param_2; // 2
-    param_1 = param_2;
-    param_2 = temp - param_1;
-
-    Console.WriteLine(temp);
-
-}
-
-
-// задание 4
-
-int[] CopyArray(int[] inArray)
-{
-    int[] result = new int[inArray.Length];
-    for (int i = 0; i < inArray.Length; i++)
-    { result[i] = inArray[i]; }
-    return result;
-}
+// void FillArrayMidl(int[,] matr)
+// {
+//     Console.Write("Среднее: ");
+//     for (int i = 0; i < matr.GetLength(1); i++)
+//     {
+//         double sum = 0;
+//         for (int j = 0; j < matr.GetLength(0); j++)
+//         {
+//             sum += matr[i,j];
+//         }
+//         Console.Write($"{sum/matr.GetLength(0)}, ");
+//     }
+// }
